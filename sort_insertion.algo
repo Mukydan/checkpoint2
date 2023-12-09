@@ -1,0 +1,17 @@
+PROCEDURE sort_insertion(var currentValue: INTEGER)
+// Le tri par insertion 
+VAR
+    i,j : INTEGER;
+    tab : ARRAY_OF INTEGER[];
+
+BEGIN
+    FOR i FROM 0 TO tab.length - 1 STEP 1  DO
+        currentValue := tab[i];
+        j:= i-1
+        WHILE ((j>= 0) and (tab[j > currentValue])) DO
+            tab[j+1] = tab[j]
+            j := j - 1
+        END_WHILE
+        tab[j+1] = currentValue;
+    END_FOR
+END

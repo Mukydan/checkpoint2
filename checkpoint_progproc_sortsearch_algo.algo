@@ -1,0 +1,29 @@
+FUNCTION dot_product(v1,v2 : INTEGER) : INTEGER
+// Cette fonction calcule le produit scalaire de deux vecteurs
+VAR
+    i, ps : INTEGER;
+BEGIN
+    ps := 0;
+    FOR i FROM 1 TO v1.length STEP 1  DO
+        ps := ps + (v1[i]*v2[i]);
+    END_FOR
+    RETURN ps ;
+END
+
+ALGORITHM vecteur_orthogonaux
+VAR
+    i,n, ps : INTEGER;
+BEGIN
+    
+    v1 = lireVecteur();
+    v2 = lireVecteur();
+    ps := dot_product(v1, v2);
+    
+    FOR i FROM 1 TO n STEP 1  DO
+        IF (ps = 0) THEN
+            Write("Les vecteurs du couple "+ i + "sont orthogonaux.");
+        ELSE
+            Write("Les vecteurs du couple "+ i + "ne sont orthogonaux.");
+        END_IF
+    END_FOR
+END
